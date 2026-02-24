@@ -57,8 +57,8 @@ SQU is a novel quantum machine unlearning framework that enables **post-training
 
 ```bash
 # Clone the repository
-git clone https://github.com/akmolmasud/SQU.git
-cd SQU
+git clone https://github.com/masud1901/Sensitivity-Guided-Quantum-Machine-Unlearning.git
+cd Sensitivity-Guided-Quantum-Machine-Unlearning
 
 # Option 1: Using setup script
 chmod +x setup.sh

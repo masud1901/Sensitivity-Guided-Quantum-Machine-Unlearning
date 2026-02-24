@@ -2,12 +2,6 @@
 SQU: Sensitivity-Guided Quantum Machine Unlearning
 ===================================================
 
-Configuration file for all experiments.
-
-Author: Md Akmol Masud
-Supervisor: Prof. Khalil
-Institution: Jahangirnagar University
-Target: QPAIN 2026 Conference
 """
 
 import numpy as np

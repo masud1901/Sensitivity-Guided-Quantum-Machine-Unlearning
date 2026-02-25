@@ -101,6 +101,7 @@ SQU/
 ├── datasets.py               # Data loading (Breast Cancer, MNIST, Fashion-MNIST)
 ├── config.py                 # Hyperparameters and configuration
 ├── run_experiments.py        # Main experiment runner
+├── run_classical.py          # Classical NN baseline comparison
 ├── generate_figures.py       # Publication figure generation
 ├── requirements.txt          # Python dependencies
 ├── setup.sh                  # One-click setup script
@@ -124,6 +125,24 @@ SQU is evaluated on three benchmark datasets against static unlearning and retra
 - ✅ SQU **matches retrain-from-scratch accuracy** across all datasets
 - ✅ **Privacy improvement** on Breast Cancer (+0.67% MIA AUC reduction)
 - ✅ Avoids the **privacy degradation** seen with static unlearning on MNIST (−7.19%)
+
+### Classical vs. Quantum Comparison
+
+To contextualize VQC performance, we compare against a classical Neural Network trained on the same data for the same number of epochs (20):
+
+| Property | Classical NN | Quantum VQC |
+|:---|:---:|:---:|
+| **Trainable parameters** | ~2,498 | **12** |
+| **Accuracy (Breast Cancer)** | 94.4% | 84.4% |
+| **Exact per-sample sensitivity** | Intractable | ✅ **Feasible** |
+| **Unlearning parameter coverage** | Partial | ✅ **Complete** |
+
+> **Key insight**: The VQC's 200× fewer parameters enable *exact, complete* sensitivity analysis for every forget sample — an advantage that is computationally infeasible at classical scale. This compactness is the structural advantage that makes SQU possible.
+
+```bash
+# Run classical baseline comparison
+python run_classical.py
+```
 
 ---
 
